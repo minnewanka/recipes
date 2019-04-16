@@ -7,7 +7,10 @@ import green from '@material-ui/core/colors/green';
 
 export default createMuiTheme({
   palette: {
-    primary: orange,
+    primary: {
+      main: '#FFA500',
+      contrastText: '#fff',
+    },
     secondary: green
   }
 });
