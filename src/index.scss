@@ -1,7 +1,7 @@
 @import './common/sass/mixin';
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -16,12 +16,6 @@ html {
     font-size: 50%;
   }
 
-  @include responsive(desktop) {
-    .row .col.l5ths {
-      width: 20%;
-    }
-  }
-
   @include responsive(big-desktop) {
     font-size: 65%;
   }
@@ -31,8 +25,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -43,4 +37,19 @@ body,
 #root,
 .App {
   height: 100%;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1170px;
+  @include responsive(tab-land) {
+    width: 970px;
+  }
+
+  @include responsive(tab-port) {
+    width: 750px;
+  }
 }
