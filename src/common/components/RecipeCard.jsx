@@ -12,7 +12,7 @@ const styles = theme => ({
     maxWidth: 345
   },
   media: {
-    height: 140
+    height: 200
   },
   cardContent: {
     backgroundColor: theme.palette.primary.main,
