@@ -47,6 +47,14 @@ const Recipe = props => {
           </Typography>
         </div>
       </div>
+      <Grid container direction='row' justify='center' alignItems='center'>
+        <Grid item sm={12} md={4} lg={3}>
+          <div>ingredients</div>
+        </Grid>
+        <Grid item sm={12} md={8} lg={8}>
+          <div>Preparation</div>
+        </Grid>
+      </Grid>
     </div>
   )
 }
