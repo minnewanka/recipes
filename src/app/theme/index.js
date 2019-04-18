@@ -1,9 +1,6 @@
 import {
   createMuiTheme
-} from '@material-ui/core/styles';
-import orange from '@material-ui/core/colors/orange';
-import green from '@material-ui/core/colors/green';
-
+} from '@material-ui/core/styles'
 
 export default createMuiTheme({
   palette: {
@@ -11,6 +8,12 @@ export default createMuiTheme({
       main: '#FFA500',
       contrastText: '#fff',
     },
-    secondary: green
+    secondary: {
+      main: '#86BBD8',
+      contrastText: '#fff',
+    },
+  },
+  typography: {
+    useNextVariants: true,
   }
-});
+})

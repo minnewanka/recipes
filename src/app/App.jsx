@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import './App.scss'
-import Routes from '../common/components/routing/routing'
-import NavBar from '../common/components/navBar/NavBar'
+import Routes from '../common/components/Routing'
+import NavBar from '../common/components/NavBar'
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import theme from './theme'
 
