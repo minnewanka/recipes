@@ -9,7 +9,16 @@ class App extends Component {
     super(props)
     this.state = {
       recipes: [
-        { name: 'Recipe1', description: 'Description1' },
+        {
+          name: 'Recipe1',
+          description: 'Description1',
+          ingredients: [
+            { name: 'Ingredient1', quantity: 1 },
+            { name: 'Ingredient2', quantity: 1 },
+            { name: 'Ingredient3', quantity: 1 },
+            { name: 'Ingredient4', quantity: 1 }
+          ]
+        },
         { name: 'Recipe2', description: 'Description2' },
         { name: 'Recipe3', description: 'Description3' },
         { name: 'Recipe4', description: 'Description4' },
