@@ -3,6 +3,7 @@ import RecipeCard from '../../common/components/RecipeCard'
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/core/styles'
 import classNames from 'classnames'
+import { Consumer } from '../../context'
 
 const styles = theme => ({
   layout: {
@@ -24,20 +25,20 @@ const Home = props => {
   const { classes } = props
   return (
     <div className={classNames(classes.layout, classes.cardGrid)}>
-      <Grid container spacing={16}>
-        <Grid item key={1} sm={6} md={4} lg={3}>
-          <RecipeCard name='Khao Man Gai' description='thai chicken' />
-        </Grid>
-        <Grid item key={2} sm={6} md={4} lg={3}>
-          <RecipeCard name='Khao Man Gai' description='thai chicken' />
-        </Grid>
-        <Grid item key={3} sm={6} md={4} lg={3}>
-          <RecipeCard name='Khao Man Gai' description='thai chicken' />
-        </Grid>
-        <Grid item key={4} sm={6} md={4} lg={3}>
-          <RecipeCard name='Khao Man Gai' description='thai chicken' />
-        </Grid>
-      </Grid>
+      <Consumer>
+        {({ recipes }) => (
+          <Grid container spacing={16}>
+            {recipes.map((recipe, index) => (
+              <Grid item key={`recipe${index}`} sm={6} md={4} lg={3}>
+                <RecipeCard
+                  name={recipe.name}
+                  description={recipe.description}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        )}
+      </Consumer>
     </div>
   )
 }
