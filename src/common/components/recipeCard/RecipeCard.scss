@@ -3,8 +3,6 @@
   height: 30rem;
   margin: 1rem;
 
-
-
   .card {
     width: 100%;
     height: 100%;
@@ -18,7 +16,8 @@
 
       &:hover {
         opacity: 0.6;
-        background-color: #6F839E;
+        background-color: #6f839e;
+        cursor: pointer;
 
         .view-recipe {
           opacity: 1;
@@ -48,8 +47,5 @@
       padding: 0.2rem 1.6rem;
       font-size: 1.2rem;
     }
-
   }
-
-
 }
