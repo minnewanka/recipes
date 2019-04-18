@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
@@ -19,10 +20,13 @@ const styles = theme => ({
   }
 })
 
-const RecipeCard = ({ name, description, redirect, classes }) => {
+const RecipeCard = ({ name, description, classes, history }) => {
+  const handleCardActionArea = () => {
+    history.push({ pathname: '/recipe', state: { name, description } })
+  }
   return (
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea onClick={handleCardActionArea}>
         <CardMedia
           className={classes.media}
           image='/static/images/cards/contemplative-reptile.jpg'
@@ -41,4 +45,4 @@ const RecipeCard = ({ name, description, redirect, classes }) => {
   )
 }
 
-export default withStyles(styles)(RecipeCard)
+export default withRouter(withStyles(styles)(RecipeCard))

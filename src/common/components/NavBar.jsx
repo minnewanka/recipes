@@ -37,7 +37,7 @@ const NavBar = props => {
           <Button
             color='inherit'
             onClick={() => {
-              props.history.push('/404')
+              props.history.push('/recipeForm')
             }}
           >
             Add Recipe
