@@ -8,10 +8,12 @@ import {
 import Home from '../../containers/home/Home'
 import Recipe from '../../containers/recipe/Recipe'
 import Page404 from './404'
+import NavBar from './NavBar'
 
 const Routes = () => {
   return (
     <Router>
+      <NavBar />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/recipe' component={Recipe} />

@@ -31,10 +31,10 @@ const Home = props => {
         <Grid item key={2} sm={6} md={4} lg={3}>
           <RecipeCard name='Khao Man Gai' description='thai chicken' />
         </Grid>
-        <Grid item key={1} sm={6} md={4} lg={3}>
+        <Grid item key={3} sm={6} md={4} lg={3}>
           <RecipeCard name='Khao Man Gai' description='thai chicken' />
         </Grid>
-        <Grid item key={2} sm={6} md={4} lg={3}>
+        <Grid item key={4} sm={6} md={4} lg={3}>
           <RecipeCard name='Khao Man Gai' description='thai chicken' />
         </Grid>
       </Grid>

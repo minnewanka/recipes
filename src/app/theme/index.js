@@ -3,6 +3,9 @@ import {
 } from '@material-ui/core/styles'
 
 export default createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
   palette: {
     primary: {
       main: '#FFA500',
@@ -13,7 +16,4 @@ export default createMuiTheme({
       contrastText: '#fff',
     },
   },
-  typography: {
-    useNextVariants: true,
-  }
 })
