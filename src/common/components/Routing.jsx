@@ -6,7 +6,7 @@ import {
   Route
 } from 'react-router-dom'
 import Home from '../../containers/home/'
-import Recipe from '../../containers/recipe/Recipe'
+import Recipe from '../../containers/recipe/'
 import RecipeForm from '../../containers/recipeForm/RecipeForm'
 import Page404 from './404'
 import NavBar from './NavBar'

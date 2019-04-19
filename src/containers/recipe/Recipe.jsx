@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
@@ -23,11 +23,20 @@ const styles = theme => ({
 
 const Recipe = props => {
   const {
+    recipe,
+    getRecipe,
     classes,
     location: {
-      state: { name, description }
+      state: { recipeId }
     }
   } = props
+
+  const { name, description, ingredients } = recipe || {}
+
+  useEffect(() => {
+    getRecipe(recipeId)
+  }, [])
+
   return (
     <div>
       <div className={classes.heroUnit}>
@@ -66,18 +75,18 @@ const Recipe = props => {
                 <Grid
                   container
                   spacing={16}
-                  direction="row"
+                  direction="column"
                   justify="space-between"
                   alignItems="center"
                 >
-                  <Grid item>
-                    <Typography variant="subtitle1">Foo</Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography variant="body1" color="textSecondary">
-                      Bar
-                    </Typography>
-                  </Grid>
+                  {ingredients &&
+                    ingredients.map(ingredient => (
+                      <Grid key={ingredient} item>
+                        <Typography variant="subtitle1">
+                          {ingredient}
+                        </Typography>
+                      </Grid>
+                    ))}
                 </Grid>
               </ListItem>
             </List>

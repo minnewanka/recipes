@@ -20,24 +20,24 @@ const styles = theme => ({
   }
 })
 
-const RecipeCard = ({ name, description, classes, history }) => {
+const RecipeCard = ({ recipeId, name, description, classes, history }) => {
   const handleCardActionArea = () => {
-    history.push({ pathname: '/recipe', state: { name, description } })
+    history.push({ pathname: '/recipe', state: { recipeId } })
   }
   return (
     <Card className={classes.card}>
       <CardActionArea onClick={handleCardActionArea}>
         <CardMedia
           className={classes.media}
-          image='/static/images/cards/contemplative-reptile.jpg'
+          image="/static/images/cards/contemplative-reptile.jpg"
           title={name}
         />
       </CardActionArea>
       <CardContent className={classes.cardContent}>
-        <Typography gutterBottom variant='h5' component='h2' color='inherit'>
+        <Typography gutterBottom variant="h5" component="h2" color="inherit">
           {name}
         </Typography>
-        <Typography component='p' color='inherit'>
+        <Typography component="p" color="inherit">
           {description}
         </Typography>
       </CardContent>

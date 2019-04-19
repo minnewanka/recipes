@@ -25,14 +25,18 @@ const Home = props => {
 
   useEffect(() => {
     getRecipes()
-  })
+  }, [])
 
   return (
     <div className={classNames(classes.layout, classes.cardGrid)}>
       <Grid container spacing={16}>
         {recipes.map((recipe, index) => (
           <Grid item key={`recipe${index}`} sm={6} md={4} lg={3}>
-            <RecipeCard name={recipe.name} description={recipe.description} />
+            <RecipeCard
+              recipeId={recipe.recipeId}
+              name={recipe.name}
+              description={recipe.description}
+            />
           </Grid>
         ))}
       </Grid>

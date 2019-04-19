@@ -4,7 +4,7 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import theme from './theme'
 import { Provider } from '../context'
 import Parse from 'parse'
-import { getRecipes } from '../services/RecipeService'
+import { getRecipes, getRecipe } from '../services/RecipeService'
 
 Parse.initialize('7BAc82n24Kw4G4Nk8n89')
 Parse.serverURL = 'http://localhost:1337/parse'
@@ -14,13 +14,21 @@ class App extends Component {
     super(props)
     this.state = {
       recipes: [],
-      getRecipes: this.getRecipes.bind(this)
+      currentRecipe: [],
+      getRecipes: this.getRecipes.bind(this),
+      getCurrentRecipe: this.getCurrentRecipe.bind(this)
     }
   }
 
   async getRecipes() {
     const recipes = await getRecipes()
     this.setState({ recipes: recipes })
+  }
+
+  async getCurrentRecipe(id) {
+    const currentRecipe = await getRecipe(id)
+    console.log(currentRecipe)
+    this.setState({ currentRecipe: currentRecipe })
   }
 
   render() {

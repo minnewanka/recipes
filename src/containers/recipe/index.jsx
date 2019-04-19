@@ -5,7 +5,13 @@ import { Consumer } from '../../context'
 const RecipeConsumer = props => {
   return (
     <Consumer>
-      {({ recipes }) => <Recipe recipes={recipes} {...props} />}
+      {({ currentRecipe, getCurrentRecipe }) => (
+        <Recipe
+          recipe={currentRecipe}
+          getRecipe={getCurrentRecipe}
+          {...props}
+        />
+      )}
     </Consumer>
   )
 }
