@@ -8,7 +8,9 @@ import Button from '@material-ui/core/Button'
 import { createRecipe } from '../../services/RecipeService'
 import Typography from '@material-ui/core/Typography'
 import Ingredients from './components/ingredients/'
+import Preparation from './components/preparation/'
 import { useIngredients } from './components/ingredients/hooks/ingredient'
+import { usePreparation } from './components/preparation/hooks/preparation'
 
 //TODO factoriser style
 const styles = theme => ({
@@ -36,6 +38,11 @@ const RecipeForm = props => {
     checkIngredient,
     removeIngredient
   } = useIngredients()
+  const {
+    preparation,
+    addPreparationStep,
+    removePreparationStep
+  } = usePreparation()
 
   const { classes, history } = props
 
@@ -82,6 +89,11 @@ const RecipeForm = props => {
             addIngredient={addIngredient}
             checkIngredient={checkIngredient}
             removeIngredient={removeIngredient}
+          />
+          <Preparation
+            preparation={preparation}
+            addPreparationStep={addPreparationStep}
+            removePreparationStep={removePreparationStep}
           />
         </Grid>
         <Grid item align="right" xs={12} sm={12}>
