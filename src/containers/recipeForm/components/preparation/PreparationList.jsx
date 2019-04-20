@@ -13,7 +13,6 @@ const PreparationList = memo(props => (
               key={`preparationStep.${index}`}
               divider={index !== props.items.length - 1}
               onButtonClick={() => props.onItemRemove(index)}
-              onCheckBoxToggle={() => props.onItemCheck(index)}
             />
           ))}
         </List>

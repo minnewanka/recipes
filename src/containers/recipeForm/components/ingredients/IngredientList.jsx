@@ -13,7 +13,6 @@ const IngredientList = memo(props => (
               key={`IngredientItem.${index}`}
               divider={index !== props.items.length - 1}
               onButtonClick={() => props.onItemRemove(index)}
-              onCheckBoxToggle={() => props.onItemCheck(index)}
             />
           ))}
         </List>

@@ -1,5 +1,4 @@
 import {
-  Checkbox,
   IconButton,
   ListItem,
   ListItemSecondaryAction,
@@ -10,11 +9,6 @@ import React, { memo } from 'react'
 
 const IngredientItem = memo(props => (
   <ListItem divider={props.divider}>
-    <Checkbox
-      onClick={props.onCheckBoxToggle}
-      checked={props.checked}
-      disableRipple
-    />
     <ListItemText primary={props.text} />
     <ListItemSecondaryAction>
       <IconButton

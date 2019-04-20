@@ -14,16 +14,6 @@ export const useIngredients = (initialValue = []) => {
         )
       }
     },
-    checkIngredient: index => {
-      setIngredients(
-        ingredients.map((Ingredient, idx) => {
-          if (index === idx) {
-            Ingredient.checked = !Ingredient.checked
-          }
-          return Ingredient
-        })
-      )
-    },
     removeIngredient(id) {
       setIngredients(ingredients.filter((ingredient, index) => id !== index))
     }

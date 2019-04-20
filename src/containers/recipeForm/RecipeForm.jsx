@@ -32,12 +32,7 @@ const styles = theme => ({
 const RecipeForm = props => {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
-  const {
-    ingredients,
-    addIngredient,
-    checkIngredient,
-    removeIngredient
-  } = useIngredients()
+  const { ingredients, addIngredient, removeIngredient } = useIngredients()
   const {
     preparation,
     addPreparationStep,
@@ -87,7 +82,6 @@ const RecipeForm = props => {
           <Ingredients
             ingredients={ingredients}
             addIngredient={addIngredient}
-            checkIngredient={checkIngredient}
             removeIngredient={removeIngredient}
           />
           <Preparation

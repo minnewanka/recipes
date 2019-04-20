@@ -6,12 +6,7 @@ import { useIngredients } from './hooks/ingredient'
 
 const Ingredients = props => {
   const { inputValue, changeInput, clearInput, keyInput } = useInputValue()
-  const {
-    ingredients,
-    addIngredient,
-    checkIngredient,
-    removeIngredient
-  } = props
+  const { ingredients, addIngredient, removeIngredient } = props
 
   const clearInputAndAddIngrendient = () => {
     clearInput()
@@ -28,7 +23,6 @@ const Ingredients = props => {
       />
       <IngredientList
         items={ingredients}
-        onItemCheck={idx => checkIngredient(idx)}
         onItemRemove={idx => removeIngredient(idx)}
       />
     </React.Fragment>
