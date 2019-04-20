@@ -8,8 +8,7 @@ export const usePreparation = (initialValue = []) => {
       if (text !== '') {
         setPreparation(
           preparation.concat({
-            text,
-            checked: false
+            text
           })
         )
       }

@@ -41,9 +41,14 @@ const RecipeForm = props => {
 
   const { classes, history } = props
 
-  const handleSbmit = () => {
-    createRecipe(name, description, ingredients)
-    history.push({ pathname: '/recipe', state: { name, description } })
+  const handleSbmit = async () => {
+    const recipeId = await createRecipe(
+      name,
+      description,
+      ingredients,
+      preparation
+    )
+    history.push({ pathname: '/recipe', state: { recipeId } })
   }
 
   return (
@@ -69,10 +74,10 @@ const RecipeForm = props => {
             fullWidth
           />
         </Grid>
-        <Grid item align="right" xs={12} sm={12}>
+        <Grid item align="right" xs={12} sm={4}>
           <Typography
-            component="h4"
-            variant="h4"
+            component="h5"
+            variant="h5"
             align="center"
             color="textPrimary"
             gutterBottom
@@ -84,6 +89,17 @@ const RecipeForm = props => {
             addIngredient={addIngredient}
             removeIngredient={removeIngredient}
           />
+        </Grid>
+        <Grid item align="right" xs={12} sm={8}>
+          <Typography
+            component="h5"
+            variant="h5"
+            align="center"
+            color="textPrimary"
+            gutterBottom
+          >
+            Preparation
+          </Typography>
           <Preparation
             preparation={preparation}
             addPreparationStep={addPreparationStep}

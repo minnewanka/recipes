@@ -11,6 +11,7 @@ const PreparationList = memo(props => (
             <PreparationStep
               {...preparationStep}
               key={`preparationStep.${index}`}
+              stepNumber={index + 1}
               divider={index !== props.items.length - 1}
               onButtonClick={() => props.onItemRemove(index)}
             />

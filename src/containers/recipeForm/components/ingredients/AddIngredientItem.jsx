@@ -4,7 +4,7 @@ import React, { memo } from 'react'
 const AddIngredientItem = memo(props => (
   <Paper style={{ margin: 16, padding: 16 }}>
     <Grid container>
-      <Grid xs={10} md={11} item style={{ paddingRight: 16 }}>
+      <Grid xs={10} md={9} item style={{ paddingRight: 16 }}>
         <TextField
           placeholder="Add Ingredient here"
           value={props.inputValue}
@@ -13,7 +13,7 @@ const AddIngredientItem = memo(props => (
           fullWidth
         />
       </Grid>
-      <Grid xs={2} md={1} item>
+      <Grid xs={2} md={3} item>
         <Button
           fullWidth
           color="primary"

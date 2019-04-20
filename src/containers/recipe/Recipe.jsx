@@ -31,7 +31,7 @@ const Recipe = props => {
     }
   } = props
 
-  const { name, description, ingredients } = recipe || {}
+  const { name, description, ingredients, preparation } = recipe || {}
 
   useEffect(() => {
     getRecipe(recipeId)
@@ -60,13 +60,7 @@ const Recipe = props => {
           </Typography>
         </div>
       </div>
-      <Grid
-        container
-        spacing={16}
-        direction="row"
-        justify="center"
-        alignItems="center"
-      >
+      <Grid container spacing={16} direction="row" justify="center">
         <Grid item sm={12} md={4} lg={3}>
           <Paper>
             <Typography variant="h6">Ingredients</Typography>
@@ -77,7 +71,6 @@ const Recipe = props => {
                   spacing={16}
                   direction="column"
                   justify="space-between"
-                  alignItems="center"
                 >
                   {ingredients &&
                     ingredients.map(ingredient => (
@@ -95,6 +88,25 @@ const Recipe = props => {
         <Grid item sm={12} md={8} lg={8}>
           <Paper>
             <Typography variant="h6">Preparation</Typography>
+            <List>
+              <ListItem>
+                <Grid
+                  container
+                  spacing={16}
+                  direction="column"
+                  justify="space-between"
+                >
+                  {preparation &&
+                    preparation.map(preparationStep => (
+                      <Grid key={preparationStep} item>
+                        <Typography variant="subtitle1">
+                          {preparationStep}
+                        </Typography>
+                      </Grid>
+                    ))}
+                </Grid>
+              </ListItem>
+            </List>
           </Paper>
         </Grid>
       </Grid>
